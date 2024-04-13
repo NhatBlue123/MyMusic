@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="MyMusic.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="play-music">
+            <div class="header">
+                <div id="back-button">
+                    <button id="back"><img id="back-img" src="img/back-icon.png" alt=""></button>
+                </div>
+                <div id="list-button">
+                    <button id="list"><img id="list-img" src="img/list-icon1.jpg" alt=""></button>
+                </div>
+            </div>
+
+            <div class="center-img">
+                <img id="img-center" src="img/2Thlz.jpg" alt="">
+            </div>
+
+            <div class="song-title">
+                <h4 id="name-music">Song Title</h4>
+                <h5 id="author-music">NhatBlue</h5>
+            </div>
+
+            <div class="time-music">
+                <p id="minutes1">0:00</p>
+                <input id="time" min="0" max="100" value="0" type="range">
+                <p id="minutes">3:00</p>
+            </div>
+
+            <div class="previous-stop-next">
+                <div id="start">
+                    <button id="start-button"><img id="img-s" src="img/PREVIOUS-ICON.png" alt=""></button>
+                </div>
+
+                <div id="center">
+                    <button onclick="clickPause()" id="center-button"><img id="img-p" src="img/pause-icon.svg"
+                            alt=""></button>
+
+                </div>
+
+                <div id="end">
+                    <button id="end-button"><img id="img-sk" src="img/SKIP-ICON1.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="choose-music">
+            <div class="header">
+                <div id="back-button">
+                    <button id="back"><img id="back-img" src="img/back-icon.png" alt=""></button>
+                </div>
+                <div id="list-button">
+                    <button id="list"><img id="list-img" src="img/list-icon1.jpg" alt=""></button>
+                </div>
+            </div>
+
+            <div class="list-music">
+                <div class="component1">
+                    <div id="name-author-music">
+                        <p id="name-MS">Little dark age</p>
+                        <p id="author-MS">NhatBlue</p>
+                    </div>
+                    <div>
+                        <button id="play-button1" onclick="clickPlay('1')">
+                            <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="component1">
+                    <div id="name-author-music">
+                        <p id="name-MS">Nang Am Xa Dan</p>
+                        <p id="author-MS">Son Tung MTP</p>
+                    </div>
+                    <div>
+                        <button id="play-button2"  onclick="clickPlay('2')">
+                            <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="component1">
+                    <div id="name-author-music">
+                        <p id="name-MS">Marry on the cross</p>
+                        <p id="author-MS">Ghost</p>
+                    </div> 
+                    <div>
+                        <button id="play-button3"  onclick="clickPlay('3')">
+                            <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="component1">
+                    <div id="name-author-music">
+                        <p id="name-MS">Rolling in the Deep</p>
+                        <p id="author-MS">Adele</p>
+                    </div> 
+                    <div>
+                        <button id="play-button4"  onclick="clickPlay('4')">
+                            <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="MyMusic.js"></script>
+</body>
+
+</html>
