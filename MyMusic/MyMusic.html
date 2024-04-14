@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <audio id="myAudio">
+        
+    </audio>
     <div class="container">
         <div class="play-music">
             <div class="header">
@@ -41,7 +44,7 @@
                 </div>
 
                 <div id="center">
-                    <button onclick="clickPause()" id="center-button"><img id="img-p" src="img/pause-icon.svg"
+                    <button onclick="pauseMusic()" id="center-button" data-paused="true"><img id="img-p" src="img/PLAY-ICON1.png"
                             alt=""></button>
 
                 </div>
@@ -69,7 +72,7 @@
                         <p id="author-MS">NhatBlue</p>
                     </div>
                     <div>
-                        <button id="play-button1" onclick="clickPlay('1')">
+                        <button id="play-button1" onclick="clickPlay(1),handlePlayClick(1)" data-playing="false">
                             <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
                         </button>
                     </div>
@@ -81,7 +84,7 @@
                         <p id="author-MS">Son Tung MTP</p>
                     </div>
                     <div>
-                        <button id="play-button2"  onclick="clickPlay('2')">
+                        <button id="play-button2" onclick="clickPlay(2),handlePlayClick(2)" data-playing="false">
                             <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
                         </button>
                     </div>
@@ -94,7 +97,7 @@
                         <p id="author-MS">Ghost</p>
                     </div> 
                     <div>
-                        <button id="play-button3"  onclick="clickPlay('3')">
+                        <button id="play-button3"  onclick="clickPlay(3),handlePlayClick(3)" data-playing="false">
                             <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
                         </button>
                     </div>
@@ -105,7 +108,7 @@
                         <p id="author-MS">Adele</p>
                     </div> 
                     <div>
-                        <button id="play-button4"  onclick="clickPlay('4')">
+                        <button id="play-button4"  onclick="clickPlay(4),handlePlayClick(4)" data-playing="false">
                             <img id="play-icon" src="img/PLAY-ICON1.png" alt="">
                         </button>
                     </div>

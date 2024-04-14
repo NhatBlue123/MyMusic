@@ -33,51 +33,69 @@ function clickPause()
 const songs = [{
     nameMusic: 'Little dark age',
     author: 'MGMT',
-    url: '',
+    url: 'music/LittleDarkAge-MGMT-9034898.mp3',
     time: '3:00',
     img: 'imgMusic/MGMT_-_Little_Dark_Age.png',
 },{
     nameMusic: 'Nang am xa dan',
     author: 'Son Tung MTP',
-    url: 'C:/',
+    url: 'music/NangAmXaDan-SonTungMTP-2697291.mp3',
     time: '3:00',
-    img: ''
+    img: 'imgMusic/SonTug.jpg'
 },{
     nameMusic: 'Marry on a cross',
     author: 'Ghost',
-    url: 'C:/',
+    url: 'music/MaryOnACross-Ghost-6080370.mp3',
     time: '3:00',
-    img: ''
+    img: 'imgMusic/MarryOnACross.jpg'
 },{
     nameMusic: 'Rolling in the Deep',
     author: 'Adele',
-    url: 'C:/',
+    url: 'music/Adele - Rolling In The Deep (Grammy 2012 - Live).mp3',
     time: '3:00',
-    img: ''
+    img: 'imgMusic/Adele.jpg'
 }
 
 ];
-let isPlay = false;
-let imgCenter = document.getElementById('img-center');
-let nameMusic = document.getElementById('name-music');
-let authorMusic = document.getElementById('author-music');
+//
+const imgCenter = document.getElementById('img-center');
+const nameMusic = document.getElementById('name-music');
+const authorMusic = document.getElementById('author-music');
+const playMusic = document.getElementById('myAudio');
+
 function clickPlay(id)
 {
-    let buttonID = document.getElementById(`play-button${id}`);
-    if(isPlay === false)
-    {
-        buttonID.innerHTML = '<img id="play-icon1" src="img/pause-icon.svg" alt="">';
-        isPlay = true;
-    }
-    else{
-        buttonID.innerHTML = '<img id="play-icon" src="img/PLAY-ICON1.png" alt="">';   
-        isPlay = false;
-    }
-
-    if(id === '1')
-    {
-        imgCenter.src = `${songs[0].img}`;
-        nameMusic.innerHTML = `${songs[0].nameMusic}`;
-        authorMusic.innerHTML = `${songs[0].author}`;
-    }
+    const song = songs[id - 1]; 
+    imgCenter.src = song.img;
+    nameMusic.textContent = song.nameMusic;
+    authorMusic.textContent = song.author;
+    playMusic.innerHTML = `<source src="${song.url}" type="audio/mpeg">`;
+    playMusic.play();
 }
+function pauseMusic() {
+    
+}
+const playMid = document.getElementById('center-button');
+function handlePlayClick(id) {
+    const buttonID = document.getElementById(`play-button${id}`);
+    const isPlaying = buttonID.dataset.playing === 'true';
+    
+    if (isPlaying) {
+        buttonID.innerHTML = '<img id="play-icon" src="img/PLAY-ICON1.png" alt="">';
+        playMid.innerHTML = '<img id="play-icon" src="img/PLAY-ICON1.png" alt="">';
+        buttonID.dataset.playing = 'false';
+        playMusic.pause();
+    } else {
+        buttonID.innerHTML = '<img id="play-icon1" src="img/pause-icon.svg" alt="">';
+        playMid.innerHTML = '<img id="play-icon1" src="img/pause-icon.svg" alt="">';
+        buttonID.dataset.playing = 'true';
+        playMusic.play();
+    }
+    
+    //playSong(id); // Phát nhạc
+}
+document.querySelectorAll('.play-button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        handlePlayClick(index + 1);
+    });
+});
