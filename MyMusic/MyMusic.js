@@ -11,25 +11,6 @@ function xoayAnh()
     );
 }
 xoayAnh();
-//Stop music
-let isPause = true;
-function clickPause()
-{
-    let imgId = document.getElementById('center-button');
-    if(isPause)
-    {
-        imgId.style.transform = "2s";
-        imgId.innerHTML = '<img id="img-p1" src="img/PLAY-ICON1.png" alt="">';
-        isPause = false;
-    }
-    else{
-        imgId.style.transform = "2s";
-        imgId.innerHTML = '<img id="img-p" src="img/pause-icon.svg" alt="">';
-        isPause = true;
-    }
-}
-
-
 const songs = [{
     nameMusic: 'Little dark age',
     author: 'MGMT',
@@ -76,10 +57,11 @@ function pauseMusic() {
     
 }
 const playMid = document.getElementById('center-button');
+const playArray = [1,2,3,4];
+let tmp;
 function handlePlayClick(id) {
     const buttonID = document.getElementById(`play-button${id}`);
     const isPlaying = buttonID.dataset.playing === 'true';
-    
     if (isPlaying) {
         buttonID.innerHTML = '<img id="play-icon" src="img/PLAY-ICON1.png" alt="">';
         playMid.innerHTML = '<img id="play-icon" src="img/PLAY-ICON1.png" alt="">';
@@ -91,11 +73,22 @@ function handlePlayClick(id) {
         buttonID.dataset.playing = 'true';
         playMusic.play();
     }
-    
-    //playSong(id); // Phát nhạc
+    for(let i = 1 ; i <= songs.length ; i++)
+    {
+        if(i !== id)
+        {
+        const buttonID1 = document.getElementById(`play-button${i}`);
+        if(buttonID1.innerHTML === '<img id="play-icon1" src="img/pause-icon.svg" alt="">')
+        {
+            buttonID1.innerHTML = '<img id="play-icon" src="img/PLAY-ICON1.png" alt="">';
+        }
+        else{
+            buttonID1.innerHTML === '<img id="play-icon1" src="img/pause-icon.svg" alt="">';
+        }
+        }
+    }
 }
-document.querySelectorAll('.play-button').forEach((button, index) => {
-    button.addEventListener('click', () => {
-        handlePlayClick(index + 1);
-    });
-});
+function refectID(id)
+{
+    
+}
